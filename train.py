@@ -7,13 +7,13 @@ import odor_env
 
 # Define some hyper-parameters:
 train_task = 'OdorEnvA-v0'
-test_task = 'OdorEnvB-v0'
+test_task = 'OdorEnvA-v0'
 lr, epoch, batch_size = 1e-4, 100, 64
-train_num, test_num = 10, 10
-gamma, n_step, target_freq = 0.9, 3, 320
-buffer_size = 60000
-eps_train, eps_test = 1.0, 0.005
-eps_train_final = 0.05
+train_num, test_num = 50, 100
+gamma, n_step, target_freq = 0.95, 3, 320
+buffer_size = 20000
+eps_train, eps_test = 1.0, 0.0
+eps_train_final = 0.1
 step_per_epoch, step_per_collect = 10000, 10
 logger = ts.utils.TensorboardLogger(SummaryWriter('log/dqn'))
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
